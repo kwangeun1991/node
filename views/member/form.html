@@ -1,19 +1,27 @@
 {% extends '../layout.html' %}
 
 {% block content %}
-<form action="/member/join" method="post" target="ifrmHidden" autocomplete="off">
-  <dl>
-    <dt>아이디</dt>
-    <dd>
-      <input type="text" name="memId" value="">
-    </dd>
-  </dl>
-  <dl>
-    <dt>비밀번호</dt>
-    <dd>
-      <input type="password" name="memPw" value="">
-    </dd>
-  </dl>
-  <input type="submit" value="관리자등록 요청하기">
-</form>
+<div class="login_box">
+  <form action="/member/join" method="post" target="ifrmHidden" autocomplete="off">
+    <div class="main_title">
+      관리자 등록
+    </div>
+    <dl>
+      <dt>아이디</dt>
+      <dd>
+        <input type="text" name="memId" placeholder="아이디를 입력하세요.">
+      </dd>
+    </dl>
+    <dl>
+      <dt>비밀번호</dt>
+      <dd>
+        <input type="password" name="memPw" placeholder="비밀번호를 입력하세요.">
+      </dd>
+    </dl>
+    <div class="links">
+      <a href="/member/login">관리자 로그인</a>
+    </div>
+    <input type="submit" value="관리자 등록 요청하기" class="btn1">
+  </form>
+</div>
 {% endblock %}
