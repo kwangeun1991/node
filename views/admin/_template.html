@@ -16,3 +16,104 @@
     </div>
   </div>
 </script>
+<!-- 경력 추가 html -->
+<script type="text/html" id="template_job_history">
+  <div class="rows">
+    <div class="remove"><i class="xi-close"></i></div>
+    <div class="input_box input_box2 first w278">
+      <div class="guide_tit">회사명</div>
+      <input type="text" name="jhCompany">
+    </div>
+    <div class="input_box input_box2 last w278">
+      <div class="guide_tit">부서명</div>
+      <input type="text" name="jhDept">
+    </div>
+    <div class="input_box input_box2 first w115">
+      <div class="guide_tit">입사년월</div>
+      <input type="text" name="jhStartDate">
+    </div>
+    <div class="input_box input_box2 w115">
+      <div class="guide_tit">퇴사년월</div>
+      <input type="text" name="jhEndDate">
+    </div>
+    <div class="choice_box">
+      <input type="checkbox" name="jhInOffice" value="1" id="jhInOffice<%=no%>">
+      <label for="jhInOffice<%=no%>">재직중</label>
+    </div>
+    <div class="input_box input_box2 first w278">
+      <div class="guide_tit">직급/직책</div>
+      <input type="text" name="jhPosition">
+    </div>
+    <div class="input_box input_box2 last w278">
+      <div class="guide_tit">직무</div>
+      <input type="text" name="jhTask">
+    </div>
+    <div class="input_box input_box2 first w115">
+      <div class="guide_tit">연봉</div>
+      <input type="text" name="jhSalary">
+    </div>
+    <div class="input_box jhWork wp100">
+      <div class="guide_tit">담당업무</div>
+      <textarea name="jhWork" placeholder="담당하신 업무와 성과에 대해 간단명료하게 적어주세요."></textarea>
+    </div>
+  </div>
+</script>
+<!-- 인턴대외활동 추가 html -->
+<script type="text/html" id="template_intern">
+  <div class="rows">
+    <div class="remove"><i class="xi-close"></i></div>
+    <div class="select_box">
+      <select name="internType">
+        <option value="">활동구분</option>
+        <option value="인턴">인턴</option>
+        <option value="아르바이트">아르바이트</option>
+        <option value="동아리">동아리</option>
+        <option value="자원봉사">자원봉사</option>
+        <option value="사회활동">사회활동</option>
+        <option value="교내활동">교내활동</option>
+      </select>
+    </div>
+    <div class="input_box internCompany">
+      <div class="guide_tit">회사/기관/단체명</div>
+      <input type="text" name="internCompany">
+    </div>
+    <div class="input_box input_box2 w115 first">
+      <div class="guide_tit">시작년월</div>
+      <input type="text" name="internStartDate">
+    </div>
+    <div class="input_box input_box2 w115">
+      <div class="guide_tit">종료년월</div>
+      <input type="text" name="internEndDate">
+    </div>
+    <div class="input_box wp100">
+      <div class="guide_tit">활동내용</div>
+      <textarea name="internDesc" placeholder="직무와 관련된 경험에 대해(상황 - 노력 - 결과)순으로 작성하는 것이 좋습니다."></textarea>
+    </div>
+  </div>
+</script>
+<!-- 교육 이수 추가 html -->
+<script type="text/html" id="template_education">
+  <div class="rows">
+    <div class="remove"><i class="xi-close"></i></div>
+    <div class="input_box w314">
+      <div class="guide_tit">교육명</div>
+      <input type="text" name="eduName">
+    </div>
+    <div class="input_box w314 eduCompany">
+      <div class="guide_tit">교육기관</div>
+      <input type="text" name="eduCompany">
+    </div>
+    <div class="input_box input_box2 w115 first">
+      <div class="guide_tit">시작년월</div>
+      <input type="text" name="eduStartDate">
+    </div>
+    <div class="input_box input_box2 w115">
+      <div class="guide_tit">종료년월</div>
+      <input type="text" name="eduEndDate">
+    </div>
+    <div class="input_box wp100">
+      <div class="guide_tit">내용</div>
+      <textarea name="eduDesc" placeholder="이수하신 교육내용에 대해 적어주세요."></textarea>
+    </div>
+  </div>
+</script>

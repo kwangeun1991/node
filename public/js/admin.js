@@ -48,11 +48,26 @@ $(function() {
       case "학력" :
         template = "school";
         break;
+      case "경력" :
+        template = "job_history";
+        break;
+      case "인턴" :
+        template = "intern";
+        break;
+      case "교육" :
+        template = "education";
+        break;
     }
 
     if (template) {
-      $html = $("#template_" + template).html();
+      let html = $("#template_" + template).html();
+
       $target = $(this).closest(".form_inner").find(".form_html");
+      if ($target.length > 0) {
+        const no = new Date().getTime();
+        html = html.replace(/<%=no%>/g, no);
+      }
+
       $target.append($html);
     }
   });

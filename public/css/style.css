@@ -14,9 +14,12 @@ input[type='number'],
 input[type='email'] { border: 1px solid #d5d5d5; padding: 0 10px; height: 40px; width: 100%; border-radius: 7px; outline: none; }
 
 /** 너비 */
-.wp100 { width: 100% !important; }
+.wp100 { width: 100% !important; margin-left: 0 !important; }
 .w386 { width: 386px !important; }
+.w314 { width: 314px !important; }
+.w278 { width: 278px !important; }
 .w188 { width: 188px !important; }
+.w115 { width: 115px !important; }
 
 /** 높이 */
 .h200 { height: 200px !important; }
@@ -112,3 +115,9 @@ input[type='email'] { border: 1px solid #d5d5d5; padding: 0 10px; height: 40px; 
 
 .admin_page .input_box2 { margin-left: 0 !important; border-left: 0 !important; }
 .admin_page .input_box2.first { border-left: 1px solid #dddddd !important; }
+.admin_page .input_box2.last { margin-right: 10px; }
+
+.admin_page .intern .select_box { width: 125px; margin-right: 0; }
+.admin_page .intern .internCompany { width: 514px; margin-right: 10px; margin-left: 0; border-left: 0; }
+
+.admin_page .education .eduCompany { margin-right: 10px; }
