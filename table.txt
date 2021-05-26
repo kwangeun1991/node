@@ -9,3 +9,6 @@ CREATE TABLE `member` (
 COLLATE='utf8_general_ci'
 ENGINE=InnoDB
 ;
+
+
+111
