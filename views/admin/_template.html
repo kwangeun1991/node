@@ -95,7 +95,7 @@
 <script type="text/html" id="template_education">
   <div class="rows">
     <div class="remove"><i class="xi-close"></i></div>
-    <div class="input_box w314">
+    <div class="input_box w314 ml0 mr10">
       <div class="guide_tit">교육명</div>
       <input type="text" name="eduName">
     </div>
@@ -114,6 +114,92 @@
     <div class="input_box wp100">
       <div class="guide_tit">내용</div>
       <textarea name="eduDesc" placeholder="이수하신 교육내용에 대해 적어주세요."></textarea>
+    </div>
+  </div>
+</script>
+<!-- 자격증 추가 html -->
+<script type="text/html" id="template_license">
+<div class="rows">
+  <div class="remove"><i class="xi-close"></i></div>
+  <div class="input_box w386 mr10 ml0">
+    <div class="guide_tit">자격증 명</div>
+    <input type="text" name="licenseName">
+  </div>
+  <div class="input_box w278">
+    <div class="guide_tit">발행처</div>
+    <input type="text" name="licenseIssue">
+  </div>
+  <div class="input_box w115">
+    <div class="guide_tit">취득월</div>
+    <input type="text" name="licenseDate">
+  </div>
+</div>
+</script>
+<!-- 수상 추가 html -->
+<script type="text/html" id="template_award">
+  <div class="rows">
+    <div class="remove"><i class="xi-close"></i></div>
+    <div class="input_box w386 mr10 ml0">
+      <div class="guide_tit">수상명</div>
+      <input type="text" name="awardName">
+    </div>
+    <div class="input_box w278">
+      <div class="guide_tit">수여기관</div>
+      <input type="text" name="awardCompany">
+    </div>
+    <div class="input_box w115">
+      <div class="guide_tit">수상연도</div>
+      <input type="text" name="awardYear">
+    </div>
+    <div class="input_box wp100">
+      <div class="guide_tit">수여내용</div>
+      <textarea name="awardDesc" placeholder="수여 내용 및 결과를 자세히 적어주세요."></textarea>
+    </div>
+  </div>
+</script>
+<!-- 해외경험 추가 html -->
+<script type="text/html" id="template_overseas">
+  <div class="rows">
+    <div class="remove"><i class="xi-close"></i></div>
+    <div class="input_box w456 mr10 ml0">
+      <div class="guide_tit">국가명</div>
+      <input type="text" name="overseasName">
+    </div>
+    <div class="input_box input_box2 first w115">
+      <div class="guide_tit">시작년월</div>
+      <input type="text" name="overseasStartDate">
+    </div>
+    <div class="input_box input_box2 w115">
+      <div class="guide_tit">종료년월</div>
+      <input type="text" name="overseasEndDate">
+    </div>
+    <div class="input_box wp100">
+      <div class="guide_tit">내용</div>
+      <textarea name="overseasDesc" placeholder="해외에서 어떤 경험을 했는지 적어주세요.(ex. 어햑연수, 교환학생, 워킹홀리데이, 해외근무)"></textarea>
+    </div>
+  </div>
+</script>
+<!-- 해외경험 추가 html -->
+<script type="text/html" id="template_language">
+  <div class="rows">
+    <div class="remove"><i class="xi-close"></i></div>
+    <div class="select_box w115">
+      <select name="languageType">
+        <option value="">구분</option>
+        <option value="회화능력">회화능력</option>
+        <option value="공인시험">공인시험</option>
+      </select>
+    </div>
+    <div class="input_box w200">
+      <div class="guide_tit">외국어명</div>
+      <input type="text" name="languageName">
+    </div>
+    <div class="select_box w200">
+      <select name="languageAbility">
+        <option value="">회화능력</option>
+        <option value="일상회화 가능">일상회화 가능</option>
+        <option value="원어민 수준">원어민 수준</option>
+      </select>
     </div>
   </div>
 </script>
