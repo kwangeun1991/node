@@ -68,8 +68,12 @@ input[type='email'] { border: 1px solid #d5d5d5; padding: 0 10px; height: 40px; 
 .admin_page .input_box .guide_tit { font-size: 11px; color: #a8a8a8; }
 .admin_page .input_box input { font-size: 16px; color: #333333; border: 0; padding: 0; }
 
-.admin_page .input_box.address { width: 100%; }
+.admin_page .input_box.address { width: 100%; position: relative; }
 .admin_page .input_box.gender { width: 115px; }
 .admin_page .input_box.email { width: calc(100% - 125px); }
 
 .admin_page .photo_upload { border: 1px solid #dddddd; height: 146px; text-align: center; cursor: pointer; }
+.admin_page .photo_upload .t { color: #999999; }
+.admin_page .photo_upload .icon { color: #999999; font-size: 22px; margin-top: 51px;}
+
+.admin_page .search_address { position: absolute; right: 10px; font-size: 30px; color: #999999; top: 18px; cursor: pointer; }
