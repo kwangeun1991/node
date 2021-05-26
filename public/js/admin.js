@@ -39,4 +39,35 @@ $(function() {
         }
     }).open();
   });
+
+  // 양식 추가 처리
+  $(".add_form").click(function() {
+    const type = $(this).data("type");
+    let template = '';
+    switch (type) {
+      case "학력" :
+        template = "school";
+        break;
+    }
+
+    if (template) {
+      $html = $("#template_" + template).html();
+      $target = $(this).closest(".form_inner").find(".form_html");
+      $target.append($html);
+    }
+  });
+
+  // 양식 제거 처리
+  $("body").on("click", ".form_html .remove", function() {
+    $(this).closest(".rows").remove();
+  });
+
+  // textarea 확대 축소 처리
+  $("body").on("focus", ".form_html textarea", function() {
+    $(this).removeClass("h200").addClass("h200");
+  });
+
+  $("body").on("blur", ".form_html textarea", function() {
+    $(this).removeClass("h200");
+  })
 });

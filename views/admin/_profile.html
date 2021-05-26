@@ -57,23 +57,59 @@
     </div>
     <div class="form_inner">
       <div class="form_html">
+        <!--학교 선택 부분-->
+      </div>
+      <div class="add_form" data-type="학력">
+        <i class="xi-plus-circle-o"></i>
+        추가
+      </div>
+    </div>
+  </section>
+  <!-- 경력 -->
+  <section class="section job_history">
+    <div class="tit">경력</div>
+    <div class="form_inner">
+      <div class="form_html">
         <div class="rows">
-          <div class="remove"><i class="xi-close"></i></div>
-          <div class="select_box">
-            <select class="" name="schoolType">
-              <option value="고등학교">고등학교</option>
-              <option value="대학(2,3년)">대학(2,3년)</option>
-              <option value="대학교(4년)">대학교(4년)</option>
-              <option value="대학원">대학원</option>
-            </select>
+          <div class="input_box input_box2 first">
+            <div class="guide_tit">회사명</div>
+            <input type="text" name="jhCompany">
           </div>
-          <div class="input_box w386">
-            <div class="guide_tit">학교명</div>
-            <input type="text" name="schoolName" value="">
+          <div class="input_box input_box2">
+            <div class="guide_tit">부서명</div>
+            <input type="text" name="jhDept">
+          </div>
+          <div class="input_box input_box2 first">
+            <div class="guide_tit">입사년월</div>
+            <input type="text" name="jhStartDate">
+          </div>
+          <div class="input_box input_box2">
+            <div class="guide_tit">퇴사년월</div>
+            <input type="text" name="jhEndDate">
+          </div>
+          <div class="choice_box">
+            <input type="checkbox" name="jhInOffice" value="1" id="jhInOffice<%=no%>">
+            <label for="jhInOffice<%=no%>">재직중</label>
+          </div>
+          <div class="input_box input_box2 first">
+            <div class="guide_tit">직급/직책</div>
+            <input type="text" name="jhPosition">
+          </div>
+          <div class="input_box input_box2">
+            <div class="guide_tit">직무</div>
+            <input type="text" name="jhTask">
+          </div>
+          <div class="input_box input_box2 first">
+            <div class="guide_tit">연봉</div>
+            <input type="text" name="jhSalary">
+          </div>
+          <div class="input_box jhWork wp100">
+            <div class="guide_tit">담당업무</div>
+            <textarea name="jhWork" placeholder="담당하신 업무와 성과에 대해 간단명료하게 적어주세요."></textarea>
           </div>
         </div>
       </div>
-      <div class="add_form" data-type="학력">
+      <div class="add_form" data-type="경력">
         <i class="xi-plus-circle-o"></i>
         추가
       </div>

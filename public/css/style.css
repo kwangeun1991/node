@@ -18,6 +18,9 @@ input[type='email'] { border: 1px solid #d5d5d5; padding: 0 10px; height: 40px; 
 .w386 { width: 386px !important; }
 .w188 { width: 188px !important; }
 
+/** 높이 */
+.h200 { height: 200px !important; }
+
 /** 버튼 */
 .btn1 { background-color: #ff2b2b; height: 40px; width: 100%; display: block; border: 0; color: #ffffff; font-size: 20px; font-weight: 700; cursor: pointer; border-radius: 7px; }
 .btn1:hover { background-color: #cf2929; }
@@ -72,6 +75,7 @@ input[type='email'] { border: 1px solid #d5d5d5; padding: 0 10px; height: 40px; 
 
 .admin_page .input_box .guide_tit { font-size: 11px; color: #a8a8a8; }
 .admin_page .input_box input { font-size: 16px; color: #333333; border: 0; padding: 0; }
+.admin_page .input_box textarea { height: 80px; border: 0; width: 100%; resize: none; outline: 0; color: #333333; font-size: 16px; }
 
 .admin_page .input_box.address { width: 100%; position: relative; }
 .admin_page .input_box.gender { width: 115px; }
@@ -91,8 +95,10 @@ input[type='email'] { border: 1px solid #d5d5d5; padding: 0 10px; height: 40px; 
 
 .admin_page .section .add_choice { position: absolute; right: 10px; top: 8px; }
 .admin_page .section .add_choice label { font-size: 14px; color: #000000; }
+
 .admin_page .section .add_form { height: 50px; border-top: 1px solid #eeeeee; text-align: center; font-size: 16px; color: #666666; line-height: 49px; cursor: pointer; }
 .admin_page .section .add_form i { color: #3399ff; font-size: 25px; vertical-align: middle; }
+
 .admin_page .section > .form_inner { background-color: #ffffff; border: 1px solid #dbe0e9; }
 
 .admin_page .select_box { float: left; border: 1px solid #dddddd; height: 68px; width: 188px; margin-right: 10px; }
@@ -103,3 +109,6 @@ input[type='email'] { border: 1px solid #d5d5d5; padding: 0 10px; height: 40px; 
 .admin_page .form_inner .rows:after { clear: left; content: ''; display: block; }
 .admin_page .form_inner .remove { position: absolute; right: 0; top: 0; width: 35px; height: 35px; background-color: #d5d5d5; text-align: center; cursor: pointer; }
 .admin_page .form_inner .remove i { font-size: 25px; color: #ffffff; margin-top: 4px; }
+
+.admin_page .input_box2 { margin-left: 0 !important; border-left: 0 !important; }
+.admin_page .input_box2.first { border-left: 1px solid #dddddd !important; }
