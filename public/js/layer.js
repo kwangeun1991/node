@@ -34,7 +34,7 @@ const layer = {
       height: "100%",
       top: 0,
       left: 0,
-      background: "rgba(0,0,0,0.7)",
+      background: "rgba(0,0,0,0.3)",
       zIndex: 100,
       cursor: "pointer",
     });
@@ -57,7 +57,7 @@ const layer = {
       url: url,
       type: "get",
       dataType: "html",
-      
+
       success: function(res) {
         $layerPopup.html(res);
       },

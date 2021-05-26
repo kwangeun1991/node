@@ -75,5 +75,6 @@ input[type='email'] { border: 1px solid #d5d5d5; padding: 0 10px; height: 40px; 
 .admin_page .photo_upload { border: 1px solid #dddddd; height: 146px; text-align: center; cursor: pointer; }
 .admin_page .photo_upload .t { color: #999999; }
 .admin_page .photo_upload .icon { color: #999999; font-size: 22px; margin-top: 51px;}
+.admin_page .photo_upload img { width: 100%; height: 100%; display: block; }
 
 .admin_page .search_address { position: absolute; right: 10px; font-size: 30px; color: #999999; top: 18px; cursor: pointer; }
