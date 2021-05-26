@@ -10,7 +10,8 @@ dd { display: table-cell; vertical-align: middle; padding: 10px; }
 
 input[type='text'],
 input[type='password'],
-input[type='number'] { border: 1px solid #d5d5d5; padding: 0 10px; height: 40px; width: 100%; border-radius: 7px; outline: none; }
+input[type='number'],
+input[type='email'] { border: 1px solid #d5d5d5; padding: 0 10px; height: 40px; width: 100%; border-radius: 7px; outline: none; }
 
 /** 버튼 */
 .btn1 { background-color: #ff2b2b; height: 40px; width: 100%; display: block; border: 0; color: #ffffff; font-size: 20px; font-weight: 700; cursor: pointer; border-radius: 7px; }
@@ -46,5 +47,29 @@ input[type='number'] { border: 1px solid #d5d5d5; padding: 0 10px; height: 40px;
 .admin_page .floating_box .btns .btn { display: block; height: 50px; text-align: center; line-height: 50px; background-color: #ffffff; color: #333333; font-size: 15px; cursor: pointer; }
 .admin_page .floating_box .btns .btn.save { background-color: #3399ff; color: #ffffff; }
 
+/** admin/_profile.html */
 .admin_page .profile .resume_title { margin-bottom: 20px; }
 .admin_page .profile .resume_title input[type='text'] { height: 80px; border: 1px solid #dbe0e9; border-radius: 0; padding: 0 28px; display: block; font-size: 30px; letter-spacing: -2px; color: #333333; }
+
+.admin_page .profile .section { margin-bottom: 34px; position: relative; }
+.admin_page .profile .section > .inner { background-color: #ffffff; padding: 20px 20px 10px; border: 1px solid #dbe0e9; }
+
+.admin_page .profile .section > .tit { font-size: 20px; color: #333333; font-weight: bold; margin-bottom: 14px; }
+.admin_page .profile .section > .required_tit { position: absolute; right: 0; top: 5px; color: #999999; }
+.admin_page .section .box { float: left; width: 386px; margin-right: 10px; }
+.admin_page .section .box3 { margin-right: 0; width: 106px; }
+.admin_page .section > .inner:after { clear: left; content: ''; display: block; }
+
+.admin_page .section .input_box { width: 188px; float: left; margin-left: 10px; border: 1px solid #dddddd; padding: 5px 10px; margin-bottom: 10px; }
+.admin_page .section .input_box:nth-child(2n+1) { margin-left: 0; }
+
+.admin_page .section .box:after { clear: left; content: ''; display: block; }
+
+.admin_page .input_box .guide_tit { font-size: 11px; color: #a8a8a8; }
+.admin_page .input_box input { font-size: 16px; color: #333333; border: 0; padding: 0; }
+
+.admin_page .input_box.address { width: 100%; }
+.admin_page .input_box.gender { width: 115px; }
+.admin_page .input_box.email { width: calc(100% - 125px); }
+
+.admin_page .photo_upload { border: 1px solid #dddddd; height: 146px; text-align: center; cursor: pointer; }
