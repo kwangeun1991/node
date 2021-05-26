@@ -13,6 +13,11 @@ input[type='password'],
 input[type='number'],
 input[type='email'] { border: 1px solid #d5d5d5; padding: 0 10px; height: 40px; width: 100%; border-radius: 7px; outline: none; }
 
+/** 너비 */
+.wp100 { width: 100% !important; }
+.w386 { width: 386px !important; }
+.w188 { width: 188px !important; }
+
 /** 버튼 */
 .btn1 { background-color: #ff2b2b; height: 40px; width: 100%; display: block; border: 0; color: #ffffff; font-size: 20px; font-weight: 700; cursor: pointer; border-radius: 7px; }
 .btn1:hover { background-color: #cf2929; }
@@ -78,3 +83,23 @@ input[type='email'] { border: 1px solid #d5d5d5; padding: 0 10px; height: 40px; 
 .admin_page .photo_upload img { width: 100%; height: 100%; display: block; }
 
 .admin_page .search_address { position: absolute; right: 10px; font-size: 30px; color: #999999; top: 18px; cursor: pointer; }
+
+.admin_page .work_condition > .inner:after { clear: left; content: ''; display: block; }
+.admin_page .work_condition .wp100 { margin-left: 0; }
+.admin_page .choice_box { float: left; padding: 24px 10px; }
+.admin_page .choice_box label { font-size: 14px; color: #333333; cursor: pointer; }
+
+.admin_page .section .add_choice { position: absolute; right: 10px; top: 8px; }
+.admin_page .section .add_choice label { font-size: 14px; color: #000000; }
+.admin_page .section .add_form { height: 50px; border-top: 1px solid #eeeeee; text-align: center; font-size: 16px; color: #666666; line-height: 49px; cursor: pointer; }
+.admin_page .section .add_form i { color: #3399ff; font-size: 25px; vertical-align: middle; }
+.admin_page .section > .form_inner { background-color: #ffffff; border: 1px solid #dbe0e9; }
+
+.admin_page .select_box { float: left; border: 1px solid #dddddd; height: 68px; width: 188px; margin-right: 10px; }
+.admin_page .select_box select { width: 100%; height: 66px; border: 0; }
+
+.admin_page .form_inner .rows { padding: 20px; border-top: 1px solid #eeeeee; position: relative; }
+.admin_page .form_inner .rows:first-child { border-top: 0; }
+.admin_page .form_inner .rows:after { clear: left; content: ''; display: block; }
+.admin_page .form_inner .remove { position: absolute; right: 0; top: 0; width: 35px; height: 35px; background-color: #d5d5d5; text-align: center; cursor: pointer; }
+.admin_page .form_inner .remove i { font-size: 25px; color: #ffffff; margin-top: 4px; }

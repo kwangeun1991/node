@@ -2,7 +2,7 @@
   <section class="box resume_title">
     <input type="text" name="resumeTitle" placeholder="기업에게 나에 대해 알려줍시다. 강점, 목표, 관심분야도 좋아요.">
   </section>
-
+  <!-- 인적사항 -->
   <section class="section basic_info">
     <div class="tit">인적사항</div>
     <div class="required_tit">필수 입력 정보입니다.</div>
@@ -48,12 +48,42 @@
       </div>
     </div>
   </section>
-
+  <!-- 학력 -->
+  <section class="section school_history">
+    <div class="tit">학력</div>
+    <div class="add_choice">
+      <input type="checkbox" name="belowHighschool" value="1" id="belowHighschool">
+      <label for="belowHighschool">고등학교 미만 졸업</label>
+    </div>
+    <div class="form_inner">
+      <div class="form_html">
+        <div class="rows">
+          <div class="remove"><i class="xi-close"></i></div>
+          <div class="select_box">
+            <select class="" name="schoolType">
+              <option value="고등학교">고등학교</option>
+              <option value="대학(2,3년)">대학(2,3년)</option>
+              <option value="대학교(4년)">대학교(4년)</option>
+              <option value="대학원">대학원</option>
+            </select>
+          </div>
+          <div class="input_box w386">
+            <div class="guide_tit">학교명</div>
+            <input type="text" name="schoolName" value="">
+          </div>
+        </div>
+      </div>
+      <div class="add_form" data-type="학력">
+        <i class="xi-plus-circle-o"></i>
+        추가
+      </div>
+    </div>
+  </section>
   <!-- 희망근무 조건 -->
   <section class="section work_condition">
     <div class="tit">희망근무조건</div>
     <div class="inner">
-      <div class="input_box">
+      <div class="input_box w386">
         <div class="guide_tit">고용형태</div>
         <input type="text" name="workType">
       </div>
@@ -61,13 +91,17 @@
         <div class="guide_tit">희망연봉</div>
         <input type="text" name="salary">
       </div>
-      <div class="input_box">
+      <div class="choice_box">
+        <input type="checkbox" name="negotiableSalary" value="1" id="negotiableSalary">
+        <label for="negotiableSalary">면접 후 결정</label>
+      </div>
+      <div class="input_box wp100">
         <div class="guide_tit">희망근무지</div>
         <input type="text" name="workLocation">
       </div>
-      <div class="input_box">
+      <div class="input_box wp100">
         <div class="guide_tit">직무산업키워드</div>
-        <input type="text" name="workType">
+        <input type="text" name="workKeyword">
       </div>
     </div>
   </section>
