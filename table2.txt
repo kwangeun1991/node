@@ -36,6 +36,7 @@
   jhTask: [ '', '' ],
   jhSalary: [ '', '' ],
   jhWork: [ '', '' ],
+  jhInOffice
 
   인턴대외활동 - intern
   internType: [ '', '' ],
@@ -78,7 +79,6 @@
   portfolioTitle: [ '', '' ],
   portfolioUrl: [ '', '' ],
   portfolioDesc: [ '', '' ],
-
 
 
   자기소개서 - introduction
