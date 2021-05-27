@@ -49,7 +49,7 @@
     </div>
   </section>
   <!-- 학력 -->
-  <section class="section school_history">
+  <section class="section school_history dn">
     <div class="tit">학력</div>
     <div class="add_choice">
       <input type="checkbox" name="belowHighschool" value="1" id="belowHighschool">
@@ -66,7 +66,7 @@
     </div>
   </section>
   <!-- 경력 -->
-  <section class="section job_history">
+  <section class="section job_history dn">
     <div class="tit">경력</div>
     <div class="form_inner">
       <div class="form_html">
@@ -79,7 +79,7 @@
     </div>
   </section>
   <!-- 인턴·대외활동 -->
-  <section class="section intern">
+  <section class="section intern dn">
     <div class="tit">인턴·대외활동</div>
     <div class="form_inner">
       <div class="form_html">
@@ -92,7 +92,7 @@
     </div>
   </section>
   <!-- 교육 이수 -->
-  <section class="section education">
+  <section class="section education dn">
     <div class="tit">교육</div>
     <div class="form_inner">
       <div class="form_html">
@@ -105,7 +105,7 @@
     </div>
   </section>
   <!-- 자격증 이수 -->
-  <section class="section license">
+  <section class="section license dn">
     <div class="tit">자격증</div>
     <div class="form_inner">
       <div class="form_html">
@@ -118,7 +118,7 @@
     </div>
   </section>
   <!-- 수상내역 이수 -->
-  <section class="section award">
+  <section class="section award dn">
     <div class="tit">수상</div>
     <div class="form_inner">
       <div class="form_html">
@@ -131,7 +131,7 @@
     </div>
   </section>
   <!-- 해외경험 -->
-  <section class="section overseas">
+  <section class="section overseas dn">
     <div class="tit">해외경험</div>
     <div class="form_inner">
       <div class="form_html">
@@ -144,7 +144,7 @@
     </div>
   </section>
   <!-- 어학 -->
-  <section class="section language">
+  <section class="section language dn">
     <div class="tit">어학</div>
     <div class="form_inner">
       <div class="form_html">
@@ -156,8 +156,21 @@
       </div>
     </div>
   </section>
+  <!-- 포트폴리오 -->
+  <section class="section portfolio dn">
+    <div class="tit">포트폴리오</div>
+    <div class="form_inner">
+      <div class="form_html">
+        <!--포트폴리오 추가 부분-->
+      </div>
+      <div class="add_form" data-type="포트폴리오">
+        <i class="xi-plus-circle-o"></i>
+        포트폴리오 추가
+      </div>
+    </div>
+  </section>
   <!-- 취업우대 • 병역  -->
-  <section class="section benefit">
+  <section class="section benefit dn">
     <div class="tit">취업우대 • 병역</div>
     <div class="inner2">
       <div class="sel">
@@ -199,7 +212,7 @@
       <dl class="military dn">
         <dt>병역</dt>
         <dd>
-          <select name="mailitatyState">
+          <select name="military">
             <option value="">병역</option>
             <option value="군필">군필</option>
             <option value="미필">미필</option>
@@ -207,23 +220,25 @@
             <option value="해당없음">해당없음</option>
           </select>
         </dd>
-      </dl><!--
-      <div class="input_box w115">
-        <div class="guide_tit">입대일</div>
-        <input type="text" name="languageName">
-      </div>
-      <div class="input_box w115">
-        <div class="guide_tit">제대일</div>
-        <input type="text" name="languageName">
-      </div>
-      <div class="input_box w200">
-        <div class="guide_tit">군별/제대계급</div>
-        <input type="text" name="languageName">
-      </div>-->
+        <dd>
+          <div class="input_box w115">
+            <div class="guide_tit">입대일</div>
+            <input type="text" name="languageName">
+          </div>
+          <div class="input_box w115">
+            <div class="guide_tit">제대일</div>
+            <input type="text" name="languageName">
+          </div>
+          <div class="input_box w200">
+            <div class="guide_tit">군별/제대계급</div>
+            <input type="text" name="languageName">
+          </div>
+        </dd>
+      </dl>
     </div>
   </section>
   <!-- 자기소개서 -->
-  <section class="section introduction">
+  <section class="section introduction dn">
     <div class="tit">자기소개서</div>
     <div class="form_inner">
       <div class="form_html">

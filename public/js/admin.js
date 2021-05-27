@@ -1,4 +1,39 @@
 /**
+* nav 메뉴 선택시 양식 보기, 숨김 처리
+*
+*/
+function updateSelectedMenu()
+{
+  $list = $(".floating_box input[type='checkbox']");
+  $.each($list, function() {
+    const target = $(this).data("target");
+    if ($(this).prop("checked")) {
+      $("section." + target).removeClass("dn");
+    } else {
+      $("section." + target).removeClass("dn").addClass("dn");
+    }
+  });
+}
+
+/**
+* 스크롤시 nav 메뉴 고정 처리
+*
+*/
+function updateNavFixed()
+{
+  const offset = $(".container .nav").offset();
+  const ypos = offset.top + 100;
+  //console.log(ypos);
+  const st = $(window).scrollTop();
+  $floatingBox = $(".nav .floating_box");
+  if (ypos > st) { // fixed remove
+    $floatingBox.removeClass("fixed");
+  } else { // fixed add
+    $floatingBox.removeClass("fixed").addClass("fixed");
+  }
+}
+
+/**
 * 취업 우대 및 병역 항목 선택시
 * 장애, 병역 선택에 따른 항목 노출
 *
@@ -7,7 +42,7 @@ function updateBenefit()
 {
   $list = $(".benefit input[type='checkbox']:checked");
   let isAdditionalSelect = false;
-  $(".additional_select .additional_select dl").removeClass("dn").addClass("dn");
+  $(".additional_select, .additional_select dl").removeClass("dn").addClass("dn");
   $.each($list, function() {
     const benefit = $(this).val();
     if (benefit == '장애') {
@@ -98,6 +133,9 @@ $(function() {
       case "자기소개서" :
         template = "introduction";
         break;
+      case "포트폴리오" :
+        template = "portfolio";
+        break;
     }
 
     if (template) {
@@ -132,6 +170,17 @@ $(function() {
   // 취업우대 및 병역 클릭(보임 안보임) 처리
   $(".benefit input[type='checkbox']").click(function () {
     updateBenefit();
+  });
+
+  // 스크롤시 nav 메뉴 고정
+  updateNavFixed();
+  $(window).scroll(function() {
+    updateNavFixed();
+  });
+
+  // nav 메뉴 선택 처리
+  $(".floating_box input[type='checkbox']").click(function() {
+    updateSelectedMenu();
   });
 
 });

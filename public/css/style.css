@@ -62,12 +62,24 @@ input[type='email'] { border: 1px solid #d5d5d5; padding: 0 10px; height: 40px; 
 .admin_page .container .profile { display: table-cell; vertical-align: top; }
 
 /** admin/_nav.html */
-.admin_page .floating_box { width: 240px; position: absolute; right: 0; }
+.admin_page .floating_box { width: 240px; margin-left: 20px; }
+.admin_page .floating_box.fixed { position: fixed; }
 .admin_page .selection_box { background-color: #ffffff; padding: 15px; margin-bottom: 10px; border: 1px solid #eeeeee; }
-.admin_page .selection_box .tit { font-size: 14px; color: #999999; border-bottom: 1px solid #eeeeee; padding-bottom: 13px; }
+.admin_page .selection_box .tit { font-size: 14px; color: #999999; border-bottom: 1px solid #eeeeee; padding-bottom: 13px; margin-bottom: 10px; }
 
 .admin_page .floating_box .btns .btn { display: block; height: 50px; text-align: center; line-height: 50px; background-color: #ffffff; color: #333333; font-size: 15px; cursor: pointer; }
 .admin_page .floating_box .btns .btn.save { background-color: #3399ff; color: #ffffff; }
+
+.admin_page .floating_box input[type='checkbox'] { display: none; }
+.admin_page .floating_box input[type='checkbox']+label { font-size: 17px; color: #666666; cursor: pointer; padding: 7px; display: block; position: relative; }
+.admin_page .floating_box input[type='checkbox']+label i { font-size: 25px; color: #666666; position: absolute; }
+.admin_page .floating_box input[type='checkbox']+label .plus { display: inline; }
+.admin_page .floating_box input[type='checkbox']+label .minus { display: none; }
+
+.admin_page .floating_box input[type='checkbox']:checked+label { color: #3399ff; }
+.admin_page .floating_box input[type='checkbox']:checked+label i { color: #3399ff; }
+.admin_page .floating_box input[type='checkbox']:checked+label .plus { display: none; }
+.admin_page .floating_box input[type='checkbox']:checked+label .minus { display: inline; }
 
 /** admin/_profile.html */
 .admin_page .profile .resume_title { margin-bottom: 20px; }
@@ -155,6 +167,9 @@ input[type='email'] { border: 1px solid #d5d5d5; padding: 0 10px; height: 40px; 
 .admin_page .benefit dd { padding: 0; }
 .admin_page .benefit dl.handicap { margin-bottom: 10px; }
 .admin_page .benefit .additional_select select { border: 1px solid #dddddd; width: 180px; height: 62px; background-color: #ffffff; }
+
+/** 취업우대 병역 */
+
 
 /** 자기소개서 */
 .admin_page .introduction input[type='text'] { height: 60px; padding: 0 15px; border: 1px solid #dddddd; border-radius: 0; font-size: 16px; color: #333333;  }
