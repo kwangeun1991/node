@@ -12,3 +12,40 @@ ENGINE=InnoDB
 
 git pull - 소스 동기화(작업 위치가 다를 때 작동시켜 최신 소스로 다운받아야 함)
 git revert - 되돌리기 (커밋에 있는 저장된 자료를 이용해서)
+
+
+
+
+CREATE TABLE `basicinfo` (
+	`resumeTitle` VARCHAR(255) NULL DEFAULT NULL COLLATE 'utf8_general_ci',
+	`name` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8_general_ci',
+	`birthDate` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8_general_ci',
+	`landline` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8_general_ci',
+	`cellPhone` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8_general_ci',
+	`gender` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8_general_ci',
+	`email` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8_general_ci',
+	`address` VARCHAR(255) NULL DEFAULT NULL COLLATE 'utf8_general_ci',
+	`workType` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8_general_ci',
+	`salary` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8_general_ci',
+	`workLocation` VARCHAR(255) NULL DEFAULT NULL COLLATE 'utf8_general_ci',
+	`workKeyword` VARCHAR(255) NULL DEFAULT NULL COLLATE 'utf8_general_ci',
+	`beneift` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8_general_ci',
+	`handicapLevel` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8_general_ci',
+	`military` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8_general_ci'
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+;
+
+
+
+
+CREATE TABLE `school` (
+	`idx` INT(11) NOT NULL AUTO_INCREMENT,
+	`type` VARCHAR(50) NOT NULL COLLATE 'utf8_general_ci',
+	`name` VARCHAR(60) NOT NULL COLLATE 'utf8_general_ci',
+	PRIMARY KEY (`idx`) USING BTREE
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+;

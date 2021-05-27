@@ -1,0 +1,86 @@
+1차원 데이터 ------------------------------------------------
+ basicInfo
+ 인적사항
+  resumeTitle: '',
+  name: '',
+  birthDate: '',
+  landline: '',
+  cellPhone: '',
+  gender: '',
+  email: '',
+  address: '',
+
+  희망근무조건
+  workType: '',
+  salary: '',
+  workLocation: '',
+  workKeyword: ''
+
+  취업우대,병역
+  beneift
+  handicapLevel: '',
+  military: '',
+
+
+2차원 데이터 ----------------------------------------------------------------------------------
+  학력 - school
+  schoolType: [ '고등학교', '고등학교' ],
+  schoolName: [ '', '' ],
+
+  경력 - jobHistory
+  jhCompany: [ '', '' ],
+  jhDept: [ '', '' ],
+  jhStartDate: [ '', '' ],
+  jhEndDate: [ '', '' ],
+  jhPosition: [ '', '' ],
+  jhTask: [ '', '' ],
+  jhSalary: [ '', '' ],
+  jhWork: [ '', '' ],
+
+  인턴대외활동 - intern
+  internType: [ '', '' ],
+  internCompany: [ '', '' ],
+  internStartDate: [ '', '' ],
+  internEndDate: [ '', '' ],
+  internDesc: [ '', '' ],
+
+  교육 - education
+  eduName: [ '', '' ],
+  eduCompany: [ '', '' ],
+  eduStartDate: [ '', '' ],
+  eduEndDate: [ '', '' ],
+  eduDesc: [ '', '' ],
+
+
+  자격증 - license
+  licenseName: [ '', '' ],
+  licenseIssue: [ '', '' ],
+  licenseDate: [ '', '' ],
+
+  수상내역 - award
+  awardName: [ '', '' ],
+  awardCompany: [ '', '' ],
+  awardYear: [ '', '' ],
+  awardDesc: [ '', '' ],
+
+  해외경험 - overseas
+  overseasName: [ '', '' ],
+  overseasStartDate: [ '', '' ],
+  overseasEndDate: [ '', '' ],
+  overseasDesc: [ '', '' ],
+
+  어학 - language
+  languageType: [ '', '' ],
+  languageName: [ '', '' ],
+  languageAbility: [ '', '' ],
+
+  포트폴리오 - portfolio
+  portfolioTitle: [ '', '' ],
+  portfolioUrl: [ '', '' ],
+  portfolioDesc: [ '', '' ],
+
+
+
+  자기소개서 - introduction
+  introductionTitle: [ '', '' ],
+  introduction: [ '', '' ],

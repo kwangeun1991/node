@@ -71,8 +71,9 @@ input[type='email'] { border: 1px solid #d5d5d5; padding: 0 10px; height: 40px; 
 .admin_page .floating_box .btns .btn.save { background-color: #3399ff; color: #ffffff; }
 
 .admin_page .floating_box input[type='checkbox'] { display: none; }
-.admin_page .floating_box input[type='checkbox']+label { font-size: 17px; color: #666666; cursor: pointer; padding: 7px; display: block; position: relative; }
-.admin_page .floating_box input[type='checkbox']+label i { font-size: 25px; color: #666666; position: absolute; }
+.admin_page .floating_box input[type='checkbox']+label { font-size: 17px; color: #666666; cursor: pointer; padding: 7px 35px; display: block; position: relative; }
+.admin_page .floating_box input[type='checkbox']+label i { font-size: 25px; color: #666666; position: absolute; right: 0;}
+.admin_page .floating_box input[type='checkbox']+label .image { left: 0; }
 .admin_page .floating_box input[type='checkbox']+label .plus { display: inline; }
 .admin_page .floating_box input[type='checkbox']+label .minus { display: none; }
 

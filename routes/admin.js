@@ -12,4 +12,10 @@ router.get("/", (req, res, next) => {
   return res.render("admin/main", params);
 });
 
+// 이력서 저장 처리
+router.post("/profile", (req, res, next) => {
+  console.log(req.body);
+  res.send('');
+});
+
 module.exports = router;
