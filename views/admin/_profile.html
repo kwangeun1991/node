@@ -162,27 +162,27 @@
     <div class="inner2">
       <div class="sel">
         <input type="checkbox" name="benefit" value="보훈대상" id="benefit1">
-        <label for="benefit1">보훈대상</label>
+        <label for="benefit1"><i class="xi-check-circle-o"></i>보훈대상</label>
       </div>
       <div class="sel">
         <input type="checkbox" name="benefit" value="취업보호대상" id="benefit2">
-        <label for="benefit2">취업보호대상</label>
+        <label for="benefit2"><i class="xi-check-circle-o"></i>취업보호대상</label>
       </div>
       <div class="sel">
         <input type="checkbox" name="benefit" value="고용지원금대상" id="benefit3">
-        <label for="benefit3">고용지원금대상</label>
+        <label for="benefit3"><i class="xi-check-circle-o"></i>고용지원금대상</label>
       </div>
       <div class="sel">
         <input type="checkbox" name="benefit" value="장애" id="benefit4">
-        <label for="benefit4">장애</label>
+        <label for="benefit4"><i class="xi-check-circle-o"></i>장애</label>
       </div>
       <div class="sel">
         <input type="checkbox" name="benefit" value="병역" id="benefit5">
-        <label for="benefit5">병역</label>
+        <label for="benefit5"><i class="xi-check-circle-o"></i>병역</label>
       </div>
     </div>
-    <div class="additional_select">
-      <dl class="handicap">
+    <div class="additional_select dn">
+      <dl class="handicap dn">
         <dt>장애</dt>
         <dd>
           <select name="handicapLevel">
@@ -196,6 +196,43 @@
           </select>
         </dd>
       </dl>
+      <dl class="military dn">
+        <dt>병역</dt>
+        <dd>
+          <select name="mailitatyState">
+            <option value="">병역</option>
+            <option value="군필">군필</option>
+            <option value="미필">미필</option>
+            <option value="면제">면제</option>
+            <option value="해당없음">해당없음</option>
+          </select>
+        </dd>
+      </dl><!--
+      <div class="input_box w115">
+        <div class="guide_tit">입대일</div>
+        <input type="text" name="languageName">
+      </div>
+      <div class="input_box w115">
+        <div class="guide_tit">제대일</div>
+        <input type="text" name="languageName">
+      </div>
+      <div class="input_box w200">
+        <div class="guide_tit">군별/제대계급</div>
+        <input type="text" name="languageName">
+      </div>-->
+    </div>
+  </section>
+  <!-- 자기소개서 -->
+  <section class="section introduction">
+    <div class="tit">자기소개서</div>
+    <div class="form_inner">
+      <div class="form_html">
+        <!--자기소개서 추가 부분-->
+      </div>
+      <div class="add_form" data-type="자기소개서">
+        <i class="xi-plus-circle-o"></i>
+        추가
+      </div>
     </div>
   </section>
   <!-- 희망근무 조건 -->
