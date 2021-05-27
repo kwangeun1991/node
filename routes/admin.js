@@ -22,7 +22,7 @@ router.post("/profile", async (req, res, next) => {
     return alert("이력서 저장에 실패하였습니다.", res);
   }
 
-  //return reload(res, "parent");
+  return reload(res, "parent");
 });
 
 module.exports = router;
