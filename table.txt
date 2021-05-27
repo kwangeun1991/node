@@ -10,5 +10,5 @@ COLLATE='utf8_general_ci'
 ENGINE=InnoDB
 ;
 
-git pull - 소스 동기화
+git pull - 소스 동기화(작업 위치가 다를 때 작동시켜 최신 소스로 다운받아야 함)
 git revert - 되돌리기 (커밋에 있는 저장된 자료를 이용해서)

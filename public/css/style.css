@@ -31,6 +31,8 @@ input[type='email'] { border: 1px solid #d5d5d5; padding: 0 10px; height: 40px; 
 .ml0 { margin-left: 0 !important; }
 .mr0 { margin-right: 0 !important; }
 
+.br0 { border-right: 0 !important; }
+
 /** 버튼 */
 .btn1 { background-color: #ff2b2b; height: 40px; width: 100%; display: block; border: 0; color: #ffffff; font-size: 20px; font-weight: 700; cursor: pointer; border-radius: 7px; }
 .btn1:hover { background-color: #cf2929; }
@@ -114,6 +116,9 @@ input[type='email'] { border: 1px solid #d5d5d5; padding: 0 10px; height: 40px; 
 .admin_page .select_box { float: left; border: 1px solid #dddddd; height: 68px; width: 188px; margin-right: 10px; }
 .admin_page .select_box select { width: 100%; height: 66px; border: 0; }
 
+.admin_page .select_box.schoolType { width: 106px; }
+.admin_page .input_box.schoolName { width: 350px; }
+
 .admin_page .form_inner .rows { padding: 20px; border-top: 1px solid #eeeeee; position: relative; }
 .admin_page .form_inner .rows:first-child { border-top: 0; }
 .admin_page .form_inner .rows:after { clear: left; content: ''; display: block; }
@@ -131,3 +136,12 @@ input[type='email'] { border: 1px solid #d5d5d5; padding: 0 10px; height: 40px; 
 
 .admin_page .language .select_box { margin-right: 0; }
 .admin_page .language .input_box { margin-left: 0; border-right: 0; border-left: 0; }
+
+/** 취업우대 병역 */
+.admin_page .benefit input[type='checkbox'] { display: none; }
+.admin_page .benefit input[type='checkbox']+label { display: block; width: 100%; height: 62px; line-height: 60px; border: 1px solid #dddddd; font-size: 16px; color: #666666; text-align: center; cursor: pointer; }
+.admin_page .benefit input[type='checkbox']:checked+label { border-color: #3399ff; color: #3399ff; }
+
+.admin_page .benefit .inner2 { background-color: #ffffff; padding: 20px; border: 1px solid #dbe0e9; }
+.admin_page .benefit .sel { float: left; margin-right: 10px; width: 168px; }
+.admin_page .benefit .inner2:after { clear: left; content: ''; display: block; }

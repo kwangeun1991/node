@@ -2,7 +2,7 @@
 <script type="text/html" id="template_school">
   <div class="rows">
     <div class="remove"><i class="xi-close"></i></div>
-    <div class="select_box">
+    <div class="select_box schoolType mr0 br0">
       <select name="schoolType">
         <option value="고등학교">고등학교</option>
         <option value="대학(2,3년)">대학(2,3년)</option>
@@ -10,9 +10,33 @@
         <option value="대학원">대학원</option>
       </select>
     </div>
-    <div class="input_box w386">
+    <div class="input_box schoolName mr10">
       <div class="guide_tit">학교명</div>
-      <input type="text" name="schoolName" value="">
+      <input type="text" name="schoolName">
+    </div>
+    <div class="input_box input_box2 w115 first">
+      <div class="guide_tit">입학년월</div>
+      <input type="text" name="schoolStartDate">
+    </div>
+    <div class="input_box input_box2 w115">
+      <div class="guide_tit">졸업년월</div>
+      <input type="text" name="schoolEndDate">
+    </div>
+    <div class="input_box input_box2 w115">
+      <div class="guide_tit">졸업상태</div>
+      <input type="text" name="graduated">
+    </div>
+    <div class="input_box input_box2 w456 mr10 first">
+      <div class="guide_tit">학과</div>
+      <input type="text" name="department">
+    </div>
+    <div class="input_box input_box2 w115 first">
+      <div class="guide_tit">학점</div>
+      <input type="text" name="grades">
+    </div>
+    <div class="input_box input_box2 w115">
+      <div class="guide_tit">총점</div>
+      <input type="text" name="totalGrades">
     </div>
   </div>
 </script>
@@ -179,7 +203,7 @@
     </div>
   </div>
 </script>
-<!-- 해외경험 추가 html -->
+<!-- 어학 추가 html -->
 <script type="text/html" id="template_language">
   <div class="rows">
     <div class="remove"><i class="xi-close"></i></div>
