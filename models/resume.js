@@ -392,6 +392,7 @@ const resume = {
   get : async function() {
     const tables = [
       'basicinfo',
+      'school',
       'award',
       'education',
       'intern',
@@ -401,7 +402,6 @@ const resume = {
       'license',
       'overseas',
       'portfolio',
-      'school',
     ];
 
     const data = {};
