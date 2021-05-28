@@ -174,7 +174,7 @@ input[type='email'] { border: 1px solid #d5d5d5; padding: 0 10px; height: 40px; 
 .admin_page .benefit dl.handicap { margin-bottom: 10px; }
 .admin_page .benefit .additional_select select { border: 1px solid #dddddd; width: 180px; height: 62px; background-color: #ffffff; }
 
-/** 취업우대 병역 */
+.admin_page .benefit .military .input_box { background-color: #ffffff; }
 
 
 /** 자기소개서 */
