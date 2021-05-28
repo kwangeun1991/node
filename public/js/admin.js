@@ -95,6 +95,11 @@ function getResume()
         addForm(type, $target, res[table]);
       }
       // 나머지 테이블 처리
+      //console.log(res);
+      if (res.profile) {
+        $(".photo_upload").html(`<img src='${res.profile}'>`);
+        $(".photo_upload").parent().append("<i class='xi-close photo_remove'></i>");
+      }
 
     },
     error : function(err) {
@@ -284,6 +289,7 @@ function uploadCallback(isSuccess)
   if (isSuccess) {
     const tag = `<img src='/profile/profile'>`;
     $(".photo_upload").html(tag);
+    $(".photo_upload").parent().append("<i class='xi-close photo_remove'></i>");
   } else {
     alert("이미지 업로드 실패");
   }
@@ -359,4 +365,29 @@ $(function() {
     }
   });
 
+  // 이력서 이미지 삭제
+  $("body").on("click", ".photo_remove", function() {
+    if (!confirm('정말 삭제하시겠습니까?')) {
+      return;
+    }
+    $.ajax ({
+      url : "/admin/remove_photo",
+      type : "get",
+      dataType : "text",
+      success : function (res) {
+        //console.log(res);
+        if (res.trim() == '1') {
+          const tag = `<i class="xi-plus-circle-o icon"></i>
+                        <div class="t">사진추가</div>`;
+          $(".photo_upload").html(tag);
+          $(".photo_remove").remove();
+        } else {
+          alert("이미지 삭제 실패");
+        }
+      },
+      error : function (err) {
+        console.error(err);
+      }
+    });
+  });
 });

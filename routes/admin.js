@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const fs = require('fs').promises;
+const path = require('path');
 const resume = require("../models/resume");
 const { alert, reload } = require("../lib/common");
 
@@ -30,5 +32,15 @@ router.route("/profile")
 
     return reload(res, "parent");
   });
+
+// 이력서 이미지 삭제
+router.get("/remove_photo", async (req, res, next) => {
+  try {
+    await fs.unlink(path.join(__dirname, "../public/profile/profile"));
+    return res.send("1");
+  } catch (err) {}
+
+  return res.send("0");
+});
 
 module.exports = router;
