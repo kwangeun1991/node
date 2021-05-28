@@ -11,7 +11,7 @@
         <option value="대학원">대학원</option>
       </select>
     </div>
-    <div class="input_box schoolName mr10">
+    <div class="input_box schoolName w281 mr10">
       <div class="guide_tit">학교명</div>
       <input type="text" name="schoolName">
     </div>
@@ -23,21 +23,38 @@
       <div class="guide_tit">졸업년월</div>
       <input type="text" name="schoolEndDate">
     </div>
-    <div class="input_box input_box2 w115">
-      <div class="guide_tit">졸업상태</div>
-      <input type="text" name="schoolGraduated">
+    <div class="select_box status w115 bl0">
+      <select name="schoolStatus">
+        <option value="">졸업상태</option>
+        <option value="졸업">졸업</option>
+        <option value="졸업예정">졸업예정</option>
+        <option value="재학중">재학중</option>
+        <option value="중퇴">중퇴</option>
+        <option value="수료">수료</option>
+        <option value="휴학">휴학</option>
+      </select>
     </div>
-    <div class="input_box input_box2 w456 mr10 first">
+    <div class="choice_box">
+      <input type="hidden" name="schoolTransfer" value="0">
+      <input type="checkbox" name="_schoolTransfer" class="schoolTransfer" value="1" id="schoolTransfer<%=no%>">
+      <label for="schoolTransfer<%=no%>" class="schoolTransferTxt">대입검정고시</label>
+    </div>
+    <div class="input_box input_box2 w386 mr10 first major">
       <div class="guide_tit">학과</div>
-      <input type="text" name="schoolDept">
+      <input type="text" name="schoolMajor">
     </div>
-    <div class="input_box input_box2 w115 first">
+    <div class="input_box input_box2 w115 first br0 score">
       <div class="guide_tit">학점</div>
       <input type="text" name="schoolGrades">
     </div>
-    <div class="input_box input_box2 w115">
-      <div class="guide_tit">총점</div>
-      <input type="text" name="schoolTotalGrades">
+    <div class="select_box select_box2 w115 scoreTotal">
+      <select name="schoolTotalGrades">
+        <option value="">총점</option>
+        <option value="4.5">4.5</option>
+        <option value="4.3">4.3</option>
+        <option value="4.0">4.0</option>
+        <option value="100">100</option>
+      </select>
     </div>
   </div>
 </script>
@@ -62,7 +79,8 @@
       <input type="text" name="jhEndDate">
     </div>
     <div class="choice_box">
-      <input type="checkbox" name="jhInOffice" value="1" id="jhInOffice<%=no%>">
+      <input type="hidden" name="jhInOffice" value="0">
+      <input type="checkbox" name="_jhInOffice" class="jhInOffice" value="1" id="jhInOffice<%=no%>">
       <label for="jhInOffice<%=no%>">재직중</label>
     </div>
     <div class="input_box input_box2 first w278">

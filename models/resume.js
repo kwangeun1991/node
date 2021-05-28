@@ -82,32 +82,31 @@ const resume = {
 
       if (params.items && params.items.indexOf("학력") != -1) {
         if (!(params.schoolType instanceof Array)) {
-          console.log(params);
+          //console.log(params);
           params.schoolType = [params.schoolType];
           params.schoolName = [params.schoolName];
           params.schoolStartDate = [params.schoolStartDate];
           params.schoolEndDate = [params.schoolEndDate];
-          params.schoolGraduated = [params.schoolGraduated];
-          params.schoolDept = [params.schoolDept];
+          params.schoolStatus = [params.schoolStatus];
+          params.schoolTransfer = [params.schoolTransfer];
+          params.schoolMajor = [params.schoolMajor];
           params.schoolGrades = [params.schoolGrades];
           params.schoolTotalGrades = [params.schoolTotalGrades];
         }
 
         params.schoolType.forEach(async (type, index) => {
-          name = params.schoolName[index];
-
-          const sql = `INSERT INTO school (type, name, startDate, endDate, graduated, department, grades, totalGrades, belowHighschool)
-                              VALUES (:type, :name, :startDate, :endDate, :graduated, :department, :grades, :totalGrades, :belowHighschool)`;
+          const sql = `INSERT INTO school (type, name, startDate, endDate, status, transfer, major, grades, totalGrades)
+                              VALUES (:type, :name, :startDate, :endDate, :status, :transfer, :major, :grades, :totalGrades)`;
           const replacements = {
             type : type,
             name : params.schoolName[index],
             startDate : params.schoolStartDate[index],
             endDate : params.schoolEndDate[index],
-            graduated : params.schoolGraduated[index],
-            department : params.schoolDept[index],
+            status : params.schoolStatus[index],
+            transfer : params.schoolTransfer[index],
+            major : params.schoolMajor[index],
             grades : params.schoolGrades[index],
-            totalGrades : params.schoolGrades[index],
-            belowHighschool : params.belowHighschool || 0,
+            totalGrades : params.schoolTotalGrades[index],
           };
 
           await sequelize.query(sql, {

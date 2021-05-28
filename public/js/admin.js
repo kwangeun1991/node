@@ -151,10 +151,6 @@ function addForm(type, target, list)
   if (template) {
     let html = $("#template_" + template).html();
 
-    if (target.length > 0) {
-      const no = new Date().getTime();
-      html = html.replace(/<%=no%>/g, no);
-    }
     //console.log(list);
     //console.log(template, type);
     if (list) { // DB에 데이터가 있으면 개수만큼 추가
@@ -165,7 +161,10 @@ function addForm(type, target, list)
 
       list.forEach((data) => {
         // 데이터를 완성 처리
-        $tplHtml = $(html);
+        let html2 = html;
+        html2 = html2.replace(/<%=no%>/g, new Date().getTime());
+
+        $tplHtml = $(html2);
         const selector = ["input[type='text']", "textarea", "select"];
         // input[type='text']
         selector.forEach((selector) => {
@@ -185,6 +184,15 @@ function addForm(type, target, list)
 
                 if (selector == 'select') {
                   $(this).change();
+                  $school1 = $(this).closest(".rows").find(".score, .scoreTotal");
+                  $school2 = $(this).closest(".rows").find(".schoolTransferTxt");
+                  if (data[key].type == '고등학교' || !data[key].type) {
+                    $school1.addClass("dn");
+                    $school2.text("대입검정고시");
+                  } else {
+                    $school1.removeClass("dn");
+                    $school2.text("편입");
+                  }
                 }
                 break;
               }
@@ -198,6 +206,7 @@ function addForm(type, target, list)
         target.append($tplHtml);
       });
     } else { // DB에 데이터 없는 경우 1개만 추가
+      html = html.replace(/<%=no%>/g, new Date().getTime());
       target.append(html);
     }
   }
@@ -389,5 +398,31 @@ $(function() {
         console.error(err);
       }
     });
+  });
+
+  // 학력 학교 구분선택에 따른 처리
+  $("body").on("change", "select[name='schoolType']", function() {
+    $section = $(this).closest(".rows");
+    $target = $section.find(".status, .major, .score, .scoreTotal");
+    if ($(this).val() == '고등학교' || $(this).val() == "") {
+      //console.log($target);
+      $target.addClass("dn");
+      $section.find(".schoolTransferTxt").text("대입검정고시");
+    } else {
+      $target.removeClass("dn");
+        $section.find(".schoolTransferTxt").text("편입");
+    }
+  });
+
+  // 학력 (편입, 대입검정고시) 클릭시 처리
+  $("body").on("click", ".schoolTransfer", function() {
+    const v = $(this).prop("checked")?1:0;
+    $(this).parent().find("input[name='schoolTransfer']").val(v);
+  });
+
+  // 경력 재직중 클릭시 처리
+  $("body").on("click", ".jhInOffice", function() {
+    const v = $(this).prop("checked")?1:0;
+    $(this).parent().find("input[name='jhInOffice']").val(v);
   });
 });

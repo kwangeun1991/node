@@ -15,9 +15,9 @@ input[type='email'] { border: 1px solid #d5d5d5; padding: 0 10px; height: 40px; 
 
 /** 너비 */
 .wp100 { width: 100% !important; margin-left: 0 !important; }
-.w456 { width: 456px !important; }
 .w386 { width: 386px !important; }
 .w314 { width: 314px !important; }
+.w281 { width: 281px !important; }
 .w278 { width: 278px !important; }
 .w200 { width: 200px !important; }
 .w188 { width: 188px !important; }
@@ -31,6 +31,7 @@ input[type='email'] { border: 1px solid #d5d5d5; padding: 0 10px; height: 40px; 
 .ml0 { margin-left: 0 !important; }
 .mr0 { margin-right: 0 !important; }
 .br0 { border-right: 0 !important; }
+.bl0 { border-left: 0 !important; }
 
 /** 안보임 처리 */
 .dn { display: none !important; }
