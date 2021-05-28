@@ -165,18 +165,18 @@ const resume = {
 
         params.internType.forEach(async (type, index) => {
           const sql = `INSERT INTO intern (type, company, startDate, endDate, description)
-                                  VLAUES (:type, :company, :startDate, :endDate, :description)`;
+                                  VALUES (:type, :company, :startDate, :endDate, :description)`;
           const replacements = {
             type : type,
             company : params.internCompany[index],
-            startDate : params.internstartDate[index],
+            startDate : params.internStartDate[index],
             endDate : params.internEndDate[index],
             description : params.internDesc[index],
           };
 
           await sequelize.query(sql, {
             replacements,
-            type:QueryTypes.INSERT,
+            type : QueryTypes.INSERT,
           });
         });
       }
@@ -299,11 +299,11 @@ const resume = {
 
       // language 어학 관련 처리
       sql = 'TRUNCATE language';
-      await sequelize.query(sql, { type:QueryTypes.DELETE });
+      await sequelize.query(sql, { type : QueryTypes.DELETE });
       if (params.items && params.items.indexOf("어학") != -1) {
         //console.log(params);
         if (!(params.languageType instanceof Array)) {
-          params.languageType = [params.languaType];
+          params.languageType = [params.languageType];
           params.languageName = [params.languageName];
           params.languageAbility = [params.languageAbility];
         }
@@ -326,7 +326,7 @@ const resume = {
 
       // portfolio 포트폴리오 처리
       sql = 'TRUNCATE portfolio';
-      await sequelize.query(sql, { type:QueryTypes.DELETE });
+      await sequelize.query(sql, { type : QueryTypes.DELETE });
       if (params.items && params.items.indexOf("포트폴리오") != -1) {
         //console.log(params);
         if (!(params.portfolioTitle instanceof Array)) {
@@ -381,6 +381,51 @@ const resume = {
       console.error(err);
       return false;
     }
+  },
+  /**
+  * 저장된 이력서 데이터
+  *
+  */
+  get : async function() {
+    const tables = [
+      'basicinfo',
+      'award',
+      'education',
+      'intern',
+      'introduction',
+      'jobhistory',
+      'language',
+      'license',
+      'overseas',
+      'portfolio',
+    ];
+
+    const data = {};
+    try {
+      for (let i = 0; i < tables.length; i++ ) {
+        table = tables[i];
+        let sql = `SELECT * FROM ` + table;
+        if (table != 'basicinfo') {
+          sql += " ORDER BY idx";
+        }
+
+        const rows = await sequelize.query(sql, {
+          type : QueryTypes.SELECT,
+        });
+
+        //console.log(rows);
+        if (table == 'basicinfo') { // 기본 인적사항 -> 레코드 1개
+          data[table] = rows[0];
+          data[table].benefit = data[table].benefit?data[table].benefit.split("||"):[];
+        } else { // 나머지는 레코드 여러개
+          data[table] = rows;
+        }
+      }
+    } catch (err) {
+      return {};
+    }
+    //console.log(data);
+    return data;
   },
 };
 
