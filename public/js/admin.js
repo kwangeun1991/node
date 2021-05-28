@@ -198,7 +198,7 @@ function addForm(type, target, list) {
                   case "select":
                     $(this).val(data[key]).change();
                     if (selector == 'select') {
-                      $school1 = $(this).closest(".rows").find(".grades, .totalGrades");
+                      $school1 = $(this).closest(".rows").find(".grades, .totalScore");
                       $school2 = $(this).closest(".rows").find(".schoolTransferTxt");
                       if (data.type == '고등학교') {
                         $school1.addClass("dn");
@@ -417,7 +417,7 @@ $(function() {
   // 학력 학교 구분선택에 따른 처리
   $("body").on("change", "select[name='schoolType']", function() {
     $section = $(this).closest(".rows");
-    $target = $section.find(".grades, .totalGrades");
+    $target = $section.find(".grades, .totalScore");
     if ($(this).val() == '고등학교' || $(this).val() == "") {
       //console.log($target);
       $target.addClass("dn");

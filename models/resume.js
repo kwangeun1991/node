@@ -91,12 +91,12 @@ const resume = {
           params.schoolTransfer = [params.schoolTransfer];
           params.schoolMajor = [params.schoolMajor];
           params.schoolGrades = [params.schoolGrades];
-          params.schoolTotalGrades = [params.schoolTotalGrades];
+          params.schoolTotalScore = [params.schoolTotalScore];
         }
 
         params.schoolType.forEach(async (type, index) => {
-          const sql = `INSERT INTO school (type, name, startDate, endDate, status, transfer, major, grades, totalGrades)
-                              VALUES (:type, :name, :startDate, :endDate, :status, :transfer, :major, :grades, :totalGrades)`;
+          const sql = `INSERT INTO school (type, name, startDate, endDate, status, transfer, major, grades, totalScore)
+                              VALUES (:type, :name, :startDate, :endDate, :status, :transfer, :major, :grades, :totalScore)`;
           const replacements = {
             type : type,
             name : params.schoolName[index],
@@ -106,7 +106,7 @@ const resume = {
             transfer : params.schoolTransfer[index],
             major : params.schoolMajor[index],
             grades : params.schoolGrades[index],
-            totalGrades : params.schoolTotalGrades[index],
+            totalScore : params.schoolTotalScore[index],
           };
 
           await sequelize.query(sql, {
