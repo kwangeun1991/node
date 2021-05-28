@@ -25,7 +25,7 @@ function getResume()
                   // 취업우대, 병역 노출
                   if (res.basicinfo[key].length > 0) {
                     $("section.benefit").removeClass("dn");
-                    $("#selection_items10").prop("checked", true);
+                    $(".floating_box .benefit").prop("checked", true);
                   }
 
                   $.each($target, function() {
@@ -70,13 +70,32 @@ function getResume()
           case "introduction" :
             type = "자기소개서";
             break;
-          case "jobgistory" :
+          case "jobhistory" :
             type = "경력";
             break;
+          case "language" :
+            type = "어학";
+            break;
+          case "license" :
+            type = "자격증";
+            break;
+          case "overseas" :
+            type = "해외경험";
+            break;
+          case "portfolio" :
+            type = "포트폴리오";
+            break;
+          case "school" :
+            type = "학력";
+            break;
         }
-      }
 
+        // $target - form_html   (section.award .form_html)
+        $target = $("section." + table + " .form_html");
+        addForm(type, $target, res[table]);
+      }
       // 나머지 테이블 처리
+
     },
     error : function(err) {
       console.error(err);
@@ -88,7 +107,7 @@ function getResume()
 * 양식 추가 nav
 *
 */
-function addForm(type, target)
+function addForm(type, target, list)
 {
   let template = '';
   switch (type) {
@@ -131,8 +150,51 @@ function addForm(type, target)
       const no = new Date().getTime();
       html = html.replace(/<%=no%>/g, no);
     }
+    //console.log(list);
+    //console.log(template, type);
+    if (list) { // DB에 데이터가 있으면 개수만큼 추가
+      if (list.length > 0) {
+        $("section." + template).removeClass("dn");
+        $(".floating_box ." + template).prop("checked", true);
+      }
 
-    target.append(html);
+      list.forEach((data) => {
+        // 데이터를 완성 처리
+        $tplHtml = $(html);
+        const selector = ["input[type='text']", "textarea", "select"];
+        // input[type='text']
+        selector.forEach((selector) => {
+          $texts = $tplHtml.find(selector);
+          //console.log($texts);
+          $.each($texts, function() {
+            const name = $(this).attr("name").toLowerCase();
+            for (key in data) {
+              let keyName = key.toLowerCase();
+              if (keyName == 'description') keyName = 'desc';
+
+              if (name.indexOf(keyName) != -1) {
+                // 일치하는 name이 있는 경우
+                //console.log(name, key);
+                //console.log($(this), data[key]);
+                $(this).val(data[key]);
+
+                if (selector == 'select') {
+                  $(this).change();
+                }
+                break;
+              }
+            }
+          });
+        });
+
+        // textarea
+        $textarea = $tplHtml.find("textarea");
+
+        target.append($tplHtml);
+      });
+    } else { // DB에 데이터 없는 경우 1개만 추가
+      target.append(html);
+    }
   }
 }
 

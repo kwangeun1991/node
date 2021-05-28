@@ -398,6 +398,7 @@ const resume = {
       'license',
       'overseas',
       'portfolio',
+      'school',
     ];
 
     const data = {};
