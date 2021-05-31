@@ -1,0 +1,79 @@
+{% extends 'layout.html' %}
+{% block style %}
+<link rel="stylesheet" type="text/css" href="/css/front.css">
+{% endblock %}
+{% block content %}
+<div class="container layout_width">
+  <div class="main_title">이력서</div>
+  <div class="info_box basic_info">
+    <div class="rows rows1">
+      {% if profile %}
+      <div class="box box1 profile">
+        <img src="{{ profile }}">
+      </div>
+      {% endif %}
+      <div class="box box2">
+        <div class="main_info">
+          <span class='t1'>{{ basicinfo.name }}</span>
+          <span class='t2'>{{ basicinfo.gender }} {{ basicinfo.birthYear}}년, {{ basicinfo.age }}세</span>
+        </div>
+        <dl>
+          <dt>휴대폰</dt>
+          <dd>{{ basicinfo.cellPhone }}</dd>
+        </dl>
+        <dl>
+          <dt>전화번호</dt>
+          <dd>{{ basicinfo.landline }}</dd>
+        </dl>
+        <dl>
+          <dt>주소</dt>
+          <dd>{{ basicinfo.address }}</dd>
+        </dl>
+      </div>
+      <div class="box box3">
+        <dl>
+          <dt>이메일</dt>
+          <dd>{{ basicinfo.email }}</dd>
+        </dl>
+      </div>
+    </div>
+    <div class="rows rows2">
+      <div class="box box1">
+        <div class="sub_title">학력</div>
+        {% if school %}
+          <div class="text2">{{ school[0].name }}</div>
+          <div class="text3">{{ school[0].type }}</div>
+          <div class="text4">{{ school[0].status }}</div>
+        {% endif %}
+      </div>
+      <div class="box box2">
+        <div class="text1">경력</div>
+        {% if jobhistory %}
+          <div class="text2">{{ jobhistory[0].company }}</div>
+          <div class="text3">{{ '재직' if jobhistory[0].inOffice else '퇴사' }}</div>
+          <div class="text4"></div>
+        {% endif %}
+      </div>
+      <div class="box box3">
+        <div class="text1">인턴·대외활동 / 해외경험</div>
+        {% if intern %}
+          <div class="text2">{{ intern[0].company }}</div>
+        {% endif %}
+        {% if overseas %}
+          <div class="text2">{{ overseas[0].name }} 해외경험</div>
+        {% endif %}
+      </div>
+      <div class="box box4">
+        <div class="text1">자격증 / 어학</div>
+        {% if license %}
+          <div class="text2">{{ license[0].name }}</div>
+        {% endif %}
+        {% if language %}
+          <div class="text2">{{ language[0].name }} {{ language[0].ability }}</div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

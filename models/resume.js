@@ -421,6 +421,19 @@ const resume = {
         if (table == 'basicinfo') { // 기본 인적사항 -> 레코드 1개
           data[table] = rows[0];
           data[table].benefit = data[table].benefit?data[table].benefit.split("||"):[];
+
+          let age = 0, birthYear = 0;
+          if (data[table].birthDate) {
+            const birthDate = data[table].birthDate.split(".");
+
+            const year = Number(new Date().getFullYear());
+            age = year - Number(birthDate[0]) + 1;
+            birthYear = birthDate[0];
+          }
+
+          data[table].age = age;
+          data[table].birthYear = birthYear;
+
         } else { // 나머지는 레코드 여러개
           data[table] = rows;
         }
