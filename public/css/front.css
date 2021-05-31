@@ -41,3 +41,5 @@ body { background-color: #f2f4f7; padding: 50px 0; }
 .info_box2 .tt5 { font-size: 14px; color: #666666; }
 
 .info_box2.school .score_tit { margin-left: 0; padding-right: 30px; }
+
+.info_box2.portfolio .rows { padding: 25px 30px; }

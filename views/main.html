@@ -32,7 +32,7 @@
       </div>
       <div class="box box3">
         <dl>
-          <dt>email</dt>
+          <dt>Email</dt>
           <dd>{{ basicinfo.email }}</dd>
         </dl>
       </div>
@@ -98,11 +98,11 @@
               <span class="tt4">{{ item.major }}</span>
             </div>
             {% if item.type != '고등학교' %}
-            <div class="r2">
-              <span class='tt4 score_tit'>학점</span>
-              <span class='tt5 score'>{{ item.grades }} / </span>
-              <span class='tt5'>{{ item.totalScore }}</span>
-            </div>
+              <div class="r2">
+                <span class='tt4 score_tit'>학점</span>
+                <span class='tt5 score'>{{ item.grades }} / </span>
+                <span class='tt5'>{{ item.totalScore }}</span>
+              </div>
             {% endif %}
           </div>
         </div>
@@ -121,7 +121,7 @@
           {% if item.endDate %} ~ {{ item.endDate }} {% endif %}
         </div>
         {% if item.period %}
-        <div class="tt2">{{ item.period }}</div>
+          <div class="tt2">{{ item.period }}</div>
         {% endif %}
       </div>
       <div class="box box2">
@@ -146,7 +146,7 @@
               {% if item.endDate %} ~ {{ item.endDate }} {% endif %}
             </div>
             {% if item.period %}
-            <div class="tt2">{{ item.period }}</div>
+              <div class="tt2">{{ item.period }}</div>
             {% endif %}
           </div>
           <div class="box box2">
@@ -165,12 +165,197 @@
     </div>
   {% endif %}
 
+  {% if education %}
+    <div class="sub_title">교육이수</div>
+    <div class="info_box info_box2 education">
+      {% for item in education %}
+        <div class="rows">
+          <div class="box box1">
+            <div class="tt1">
+              {{ item.startDate }}
+              {% if item.endDate %} ~ {{ item.endDate }} {% endif %}
+            </div>
+            {% if item.period %}
+              <div class="tt2">{{ item.period }}</div>
+            {% endif %}
+          </div>
+          <div class="box box2">
+            <div class="r1">
+              <span class='tt3'>{{ item.name }}</span>
+              {% if item.company %}<span class='tt4'>{{ item.company }}</span>{% endif %}
+            </div>
+            {% if item.description2 %}
+              <div class="tt5">
+                {{ item.description2 }}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
   {% if license %}
     <div class="sub_title">자격증</div>
     <div class="info_box info_box2 license">
-      
+      {% for item in license %}
+        <div class="rows">
+          <div class="box box1">
+            <div class="tt1">{{ item.date }}</div>
+          </div>
+          <div class="box box2">
+            <span class='tt3'>{{ item.name }}</span>
+            {% if item.issue %}<span class='tt4'>{{ item.issue }}</span>{% endif %}
+          </div>
+        </div>
+      {% endfor %}
+
     </div>
   {% endif %}
+
+  {% if award %}
+    <div class="sub_title">수상</div>
+    <div class="info_box info_box2 award">
+      {% for item in award %}
+        <div class="rows">
+          <div class="box box1">
+            <div class="tt1">{{ item.year }}년</div>
+          </div>
+          <div class="box box2">
+            <div class="r1">
+              <span class="tt3">{{ item.name }}</span>
+              {% if item.company %}<span class='tt4'>{{ item.company }}</span>{% endif %}
+            </div>
+            {% if item.description2 %}
+              <div class="tt5">
+                {{ item.description2 }}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% if overseas %}
+    <div class="sub_title">해외경험</div>
+    <div class="info_box info_box2 overseas">
+      {% for item in overseas %}
+        <div class="rows">
+          <div class="box box1">
+            <div class="tt1">
+              {{ item.startDate }}
+              {% if item.endDate %} ~ {{ item.endDate }} {% endif %}
+            </div>
+            {% if item.period %}
+              <div class="tt2">{{ item.period }}</div>
+            {% endif %}
+          </div>
+          <div class="box box2">
+            <div class="tt3">{{ item.name }}</div>
+            {% if item.description2 %}
+              <div class="tt5">{{ item.description2 }}</div>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% if language %}
+    <div class="sub_title">어학</div>
+    <div class="info_box info_box2 language">
+      {% for item in language %}
+        <div class="rows">
+          <div class="box box1">
+            <div class="tt1">{{ item.type }}</div>
+          </div>
+          <div class="box box2">
+            <span class='tt3'>{{ item.name }}</span>
+            {% if item.ability %}<span class='tt4'>{{ item.ability }}</span>{% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% if portfolio %}
+    <div class="sub_title">포트폴리오</div>
+    <div class="info_box info_box2 portfolio">
+      {% for item in portfolio %}
+        <div class="rows">
+          <div class="r1">
+            <div class="tt3">{{ item.title }}</div>
+            {% if item.url %}
+              <div class="tt5">
+                <a href="{{ item.url }}" target="_blank">{{ item.url }}</a>
+              </div>
+            {% endif %}
+          </div>
+          {% if item.description2 %}
+            <div class="tt5">
+              {{ item.description2 }}
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% if basicinfo.benefit %}
+    <div class="sub_title">취업우대사항</div>
+    <table>
+      <tr>
+        <th>보훈대상</th>
+        <td>
+          {% if basicinfo.benefit.indexOf('보훈대상') %}
+            보훈대상자
+          {% else %}
+            해당 없음
+          {% endif %}
+        </td>
+        <th>취업보호대상 여부</th>
+        <td>
+          {% if basicinfo.benefit.indexOf('취업보호 대상') %}
+            취업보호 대상자
+          {% else %}
+            해당 없음
+          {% endif %}
+        </td>
+        <th>고용지원금대상 여부</th>
+        <td>
+          {% if basicinfo.benefit.indexOf('고용지원금 대상') %}
+            고용지원금 대상자
+          {% else %}
+            해당 없음
+          {% endif %}
+        </td>
+      </tr>
+      {% if basicinfo.benefit.indexOf('병역') != -1 or basicinfo.benefit.indexOf('장애') != -1 %}
+        <tr>
+          <th>병역사항</th>
+          <td colspan='3'>
+            [{{ basicinfo.military }}]
+            {% if basicinfo.military == '군필' %}
+              {{ basicinfo.militaryStartDate }} ~ {{ basicinfo.militaryEndDate }} {{ basicinfo.militaryRank }} 제대
+            {% endif %}
+          </td>
+        </tr>
+        <tr>
+          <th>장애여부</th>
+          <td>
+            {% if basicinfo.handicapLevel %}
+              {{ basicinfo.handicapLevel }}
+            {% else %}
+              해당 없음
+            {% endif %}
+          </td>
+        </tr>
+      {% endif %}
+    </table>
+  {% endif %}
+
+  <div class="sub_title">희망근무조건</div>
 
 </div>
 {% endblock %}
