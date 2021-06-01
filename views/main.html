@@ -307,6 +307,18 @@
     </div>
   {% endif %}
 
+  {% if introduction %}
+    <div class="sub_title">자기소개서</div>
+    <div class="intro">
+      {% for item in introduction %}
+        <div class="rows">
+          <div class="tit">{{ item.title }}</div>
+          <div class="desc">{{ item.introduction2 | safe }}</div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
   {% if basicinfo.benefit %}
     <div class="sub_title">취업우대사항</div>
     <table>
@@ -328,7 +340,7 @@
           {% endif %}
         </td>
         <th>고용지원금대상 여부</th>
-        <td>
+        <td class='last'>
           {% if basicinfo.benefit3 %}
             대상
           {% else %}
@@ -345,10 +357,8 @@
               {{ basicinfo.militaryStartDate }} ~ {{ basicinfo.militaryEndDate }} {{ basicinfo.militaryRank }} 제대
             {% endif %}
           </td>
-        </tr>
-        <tr>
           <th>장애여부</th>
-          <td>
+          <td class='last'>
             {% if basicinfo.handicapLevel %}
               {{ basicinfo.handicapLevel }}
             {% else %}
@@ -364,13 +374,13 @@
   <table>
     <tr>
       <th>고용형태</th>
-      <td>
+      <td class='last'>
         {{ basicinfo.workType }}
       </td>
     </tr>
     <tr>
       <th>희망연봉</th>
-      <td>
+      <td class='last'>
         {% if basicinfo.negotiableSalary %}
           면접 후 결정
         {% else %}
@@ -380,11 +390,17 @@
     </tr>
     <tr>
       <th>희망근무지</th>
-      <td>
+      <td class='last'>
         {{ basicinfo.workLocation }}
       </td>
     </tr>
   </table>
+
+  <div class="resume_guide">
+    <div class="t1">위의 모든 기재사항은 사실과 다름없음을 확인합니다.</div>
+    <div class="t2">작성자 : {{ basicinfo.name }}</div>
+    <div class="t3">이 이력서는 2021년 05월 31일 (월)에 최종 업데이트된 이력서 입니다.</div>
+  </div>
 
 </div>
 {% endblock %}
