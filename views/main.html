@@ -51,7 +51,7 @@
         {% if jobhistory %}
           <div class="text2">{{ jobhistory[0].company }}</div>
           <div class="text3">{{ '재직' if jobhistory[0].inOffice else '퇴사' }}</div>
-          <div class="text3"></div>
+          <div class="text3">{{ jobhistory[0].period }}</div>
         {% endif %}
       </div>
       <div class="box box3">
@@ -399,7 +399,7 @@
   <div class="resume_guide">
     <div class="t1">위의 모든 기재사항은 사실과 다름없음을 확인합니다.</div>
     <div class="t2">작성자 : {{ basicinfo.name }}</div>
-    <div class="t3">이 이력서는 2021년 05월 31일 (월)에 최종 업데이트된 이력서 입니다.</div>
+    <div class="t3">이 이력서는 {{ today }}에 최종 업데이트된 이력서 입니다.</div>
   </div>
 
 </div>

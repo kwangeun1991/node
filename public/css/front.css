@@ -1,7 +1,7 @@
-body { background-color: #f2f4f7; padding: 50px 0; }
+body { background-color: #f2f4f7; padding: 50px 10px; }
 
 .layout_width { max-width: 940px; width: 100%; }
-.main_title { font-size: 30px; color: #000000; letter-spacing: -2px; line-height: 1.4; margin-bottom: 24px; font-weight: 500; }
+.main_title { font-size: 30px; color: #000000; letter-spacing: -2px; line-height: 1.4; margin-bottom: 24px; font-weight: 700; }
 .sub_title { font-size: 22px; color: #000000; padding-bottom: 13px; border-bottom: 1px solid #000000; }
 
 .info_box { background-color: #ffffff; margin-bottom: 30px; }
@@ -59,3 +59,18 @@ table tr td:last-child { border-right: 0; width: auto; }
 .resume_guide .t1 { font-size: 22px; margin-bottom: 13px; color: #000000; }
 .resume_guide .t2 { font-size: 14px; color: #000000; margin-bottom: 13px; }
 .resume_guide .t3 { font-size: 12px; color: #888888; line-height: 1.8; margin-bottom: 100px; }
+
+@media all and (max-width: 600px) {
+  .info_box.basic_info .rows2 > .box { width: calc(100% / 2); }
+  .info_box.basic_info .rows2 > .box:nth-child(1),
+  .info_box.basic_info .rows2 > .box:nth-child(2) { border-bottom: 1px solid #edeef0; }
+
+  .info_box.basic_info .rows1 > .box { float: none; width: 100%; }
+
+  .info_box2 .rows > .box { float: none; width: 100%; }
+  .info_box2 .rows > .box1 { padding-bottom: 15px; }
+  .info_box2 .rows > .box2 { padding-top: 0; }
+
+  table tr, table th, table td { display: block; width: 100%; }
+  table th, table td { height: 35px; line-height: 33px; text-align: center; }
+}
