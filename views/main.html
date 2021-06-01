@@ -64,16 +64,18 @@
         <div class="text1">인턴·대외활동 / 해외경험</div>
         {% if intern %}
           <div class="text2">{{ intern[0].company }}</div>
+          <div class="text1">외 {{ intern.length -1 }}</div>
         {% endif %}
 
         {% if overseas %}
-          <div class="text2">{{ overseas[0].name }} 해외경험</div>
+          <div class="text2">{{ overseas[0].name }}</div>
         {% endif %}
       </div>
       <div class="box box4">
         <div class="text1">자격증 / 어학</div>
         {% if license %}
           <div class="text2">{{ license[0].name }}</div>
+          <div class="text1">외 {{ license.length -1 }}</div>
         {% endif %}
 
         {% if language %}
@@ -82,7 +84,8 @@
       </div>
     </div>
   </div>
-  {% if school %}
+
+  {% if school.length > 0 %}
     <div class='sub_title'>학력</div>
     <div class="info_box info_box2 school">
       {% for item in school %}
@@ -116,7 +119,7 @@
     </div>
   {% endif %}
 
-  {% if jobhistory %}
+  {% if jobhistory.length > 0 %}
   <div class="sub_title">경력</div>
   <div class="info_box info_box2 jobhistory">
     {% for item in jobhistory %}
@@ -146,7 +149,7 @@
   </div>
   {% endif %}
 
-  {% if intern %}
+  {% if intern.length > 0 %}
     <div class="sub_title">인턴·대외활동</div>
     <div class="info_box info_box2 intern">
       {% for item in intern %}
@@ -176,7 +179,7 @@
     </div>
   {% endif %}
 
-  {% if education %}
+  {% if education.length > 0 %}
     <div class="sub_title">교육이수</div>
     <div class="info_box info_box2 education">
       {% for item in education %}
@@ -206,7 +209,7 @@
     </div>
   {% endif %}
 
-  {% if license %}
+  {% if license.length > 0 %}
     <div class="sub_title">자격증</div>
     <div class="info_box info_box2 license">
       {% for item in license %}
@@ -224,7 +227,7 @@
     </div>
   {% endif %}
 
-  {% if award %}
+  {% if award.length > 0 %}
     <div class="sub_title">수상</div>
     <div class="info_box info_box2 award">
       {% for item in award %}
@@ -248,7 +251,7 @@
     </div>
   {% endif %}
 
-  {% if overseas %}
+  {% if overseas.length > 0 %}
     <div class="sub_title">해외경험</div>
     <div class="info_box info_box2 overseas">
       {% for item in overseas %}
@@ -273,7 +276,7 @@
     </div>
   {% endif %}
 
-  {% if language %}
+  {% if language.length > 0 %}
     <div class="sub_title">어학</div>
     <div class="info_box info_box2 language">
       {% for item in language %}
@@ -290,7 +293,7 @@
     </div>
   {% endif %}
 
-  {% if portfolio %}
+  {% if portfolio.length > 0 %}
     <div class="sub_title">포트폴리오</div>
     <div class="info_box info_box2 portfolio">
       {% for item in portfolio %}
@@ -313,7 +316,7 @@
     </div>
   {% endif %}
 
-  {% if introduction %}
+  {% if introduction.length > 0 %}
     <div class="sub_title">자기소개서</div>
     <div class="intro">
       {% for item in introduction %}
