@@ -129,6 +129,11 @@
           <span class='tt3'>{{ item.company }}</span>
           <span class='tt4'>{{ item.position }} {% if item.task %} {{ item.task }} {% endif %}</span>
         </div>
+        {% if item.work2 %}
+          <div class="tt5">
+            {{ item.work2 | safe }}
+          </div>
+        {% endif %}
       </div>
     </div>
     {% endfor %}
@@ -156,7 +161,7 @@
             </div>
             {% if item.description2 %}
               <div class="tt5">
-                {{ item.description2 }}
+                {{ item.description2 | safe }}
               </div>
             {% endif %}
           </div>
@@ -186,7 +191,7 @@
             </div>
             {% if item.description2 %}
               <div class="tt5">
-                {{ item.description2 }}
+                {{ item.description2 | safe }}
               </div>
             {% endif %}
           </div>
@@ -228,7 +233,7 @@
             </div>
             {% if item.description2 %}
               <div class="tt5">
-                {{ item.description2 }}
+                {{ item.description2 | safe }}
               </div>
             {% endif %}
           </div>
@@ -254,7 +259,7 @@
           <div class="box box2">
             <div class="tt3">{{ item.name }}</div>
             {% if item.description2 %}
-              <div class="tt5">{{ item.description2 }}</div>
+              <div class="tt5">{{ item.description2 | safe }}</div>
             {% endif %}
           </div>
         </div>
@@ -294,7 +299,7 @@
           </div>
           {% if item.description2 %}
             <div class="tt5">
-              {{ item.description2 }}
+              {{ item.description2 | safe }}
             </div>
           {% endif %}
         </div>
@@ -308,7 +313,7 @@
       <tr>
         <th>보훈대상</th>
         <td>
-          {% if basicinfo.benefit.indexOf('보훈대상') %}
+          {% if basicinfo.benefit1 %}
             보훈대상자
           {% else %}
             해당 없음
@@ -316,7 +321,7 @@
         </td>
         <th>취업보호대상 여부</th>
         <td>
-          {% if basicinfo.benefit.indexOf('취업보호 대상') %}
+          {% if basicinfo.benefit2 %}
             취업보호 대상자
           {% else %}
             해당 없음
@@ -324,14 +329,14 @@
         </td>
         <th>고용지원금대상 여부</th>
         <td>
-          {% if basicinfo.benefit.indexOf('고용지원금 대상') %}
-            고용지원금 대상자
+          {% if basicinfo.benefit3 %}
+            대상
           {% else %}
             해당 없음
           {% endif %}
         </td>
       </tr>
-      {% if basicinfo.benefit.indexOf('병역') != -1 or basicinfo.benefit.indexOf('장애') != -1 %}
+      {% if basicinfo.benefit4 or basicinfo.benefit5 %}
         <tr>
           <th>병역사항</th>
           <td colspan='3'>
@@ -356,6 +361,30 @@
   {% endif %}
 
   <div class="sub_title">희망근무조건</div>
+  <table>
+    <tr>
+      <th>고용형태</th>
+      <td>
+        {{ basicinfo.workType }}
+      </td>
+    </tr>
+    <tr>
+      <th>희망연봉</th>
+      <td>
+        {% if basicinfo.negotiableSalary %}
+          면접 후 결정
+        {% else %}
+          {{ basicinfo.salary }}
+        {% endif %}
+      </td>
+    </tr>
+    <tr>
+      <th>희망근무지</th>
+      <td>
+        {{ basicinfo.workLocation }}
+      </td>
+    </tr>
+  </table>
 
 </div>
 {% endblock %}
