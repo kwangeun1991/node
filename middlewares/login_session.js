@@ -11,7 +11,7 @@ module.exports.loginSession = (req, res, next) => {
     req.isLogin = res.isLogin = res.locals.isLogin = true;
   } else { // 로그인이 안된경우 관리자 페이지 접근 차단
     if(req.url.indexOf("/admin") != -1) {
-      //return alert("접근 권한이 없습니다.", res, "/");
+      return alert("접근 권한이 없습니다.", res, "/");
     }
   }
 

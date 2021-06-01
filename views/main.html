@@ -3,6 +3,12 @@
 <link rel="stylesheet" type="text/css" href="/css/front.css">
 {% endblock %}
 {% block content %}
+{% if isLogin %}
+  <div class="print_btn no_print" onclick="window.print();">
+    <i class='xi-print'></i>
+    인쇄하기
+  </div>
+{% endif %}
 <div class="container layout_width">
   <div class="main_title">이력서</div>
   <div class="info_box basic_info">
@@ -354,7 +360,7 @@
           <td colspan='3'>
             [{{ basicinfo.military }}]
             {% if basicinfo.military == '군필' %}
-              {{ basicinfo.militaryStartDate }} ~ {{ basicinfo.militaryEndDate }} {{ basicinfo.militaryRank }} 제대
+              {{ basicinfo.militaryStartDate }} ~ {{ basicinfo.militaryEndDate }} {{ basicinfo.militaryLevel }} 제대
             {% endif %}
           </td>
           <th>장애여부</th>
